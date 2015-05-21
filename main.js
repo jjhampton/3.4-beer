@@ -4,8 +4,6 @@
   var url = 'http://gateway.marvel.com/v1/public/characters?apikey=82c9ab5aa3ff71aea506863fcf801efa';
   fetchJSON(url, app);
 
-})();
-
 /*
   Call this function with the URL where the JSON lives.
   We will pass a function as the second argument.
@@ -13,6 +11,9 @@
   The argument to that function will be the JSON data.
   You will need to change the values for url.
 */
+
+var ulElement = document.querySelector('.characters');
+
 function fetchJSON(url, callback){
     var xmlhttp = new XMLHttpRequest();
     xmlhttp.onreadystatechange = function(){
@@ -37,7 +38,7 @@ function logCharacterNames(characters) {
   listItemsForName(
     extractNames(characters)
   )
-  .forEach(log);
+  .forEach(displayListItem);
 }
 
 function listItemsForName(names) {
@@ -48,8 +49,8 @@ function listItemsForName(names) {
   });
 }
 
-function displayListItems(lis) {
-  // adds those lis into the DOM
+function displayListItem(li) {
+  ulElement.appendChild(li);
 }
 
 function extractNames(characters) {
@@ -61,3 +62,5 @@ function extractNames(characters) {
 function log() {
   console.log.apply(console, arguments);
 }
+
+})();
