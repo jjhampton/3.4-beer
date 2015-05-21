@@ -34,7 +34,15 @@ function app(response) {
 }
 
 function logCharacterNames(characters) {
-  characters.forEach(function(character){
-    console.log(character.name);
+  extractNames(characters).forEach(log);
+}
+
+function extractNames(characters) {
+  return characters.map(function(c){
+    return c.name;
   });
+}
+
+function log() {
+  console.log.apply(console, arguments);
 }
