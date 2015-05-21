@@ -1,6 +1,9 @@
 (function(){
   'use strict';
 
+  var url = 'http://gateway.marvel.com/v1/public/characters?apikey=82c9ab5aa3ff71aea506863fcf801efa';
+  fetchJSON(url, logCharacters);
+
 })();
 
 /*
@@ -25,6 +28,6 @@ function fetchJSON(url, callback){
   Etsy's API return data in a slightly different format.
   Extract the data accordingly
 */
-function logData(response) {
+function logCharacters(response) {
   console.log(response.data.results);
 }
