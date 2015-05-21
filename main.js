@@ -21,6 +21,10 @@ function fetchJSON(url, callback){
     xmlhttp.send();
 }
 
-function logData(data) {
-  console.log(data);
+/*
+  Etsy's API return data in a slightly different format.
+  Extract the data accordingly
+*/
+function logData(response) {
+  console.log(response.data.results);
 }
