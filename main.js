@@ -34,7 +34,7 @@ function app(response) {
 }
 
 function logCharacterNames(characters) {
-  for(var i = 0; i < characters.length; i++) {
-    console.log(characters[i].name);
-  }
+  characters.forEach(function(character){
+    console.log(character.name);
+  });
 }
