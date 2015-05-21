@@ -34,7 +34,22 @@ function app(response) {
 }
 
 function logCharacterNames(characters) {
-  extractNames(characters).forEach(log);
+  listItemsForName(
+    extractNames(characters)
+  )
+  .forEach(log);
+}
+
+function listItemsForName(names) {
+  return names.map(function(name){
+    var li = document.createElement('li');
+    li.textContent = name;
+    return li;
+  });
+}
+
+function displayListItems(lis) {
+  // adds those lis into the DOM
 }
 
 function extractNames(characters) {
