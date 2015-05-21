@@ -6,8 +6,16 @@
 </head>
 <body>
 
-  <ul class="characters"></ul>
+  <ul class="characters">
+  </ul>
 
+  <script id="entry-template" type="text/x-handlebars-template">
+    <li>
+      <h1>{{name}}</h1>
+    </li>
+  </script>
+  <script src="bower_components/handlebars/handlebars.js"></script>
+  <script src="bower_components/handlebars/handlebars.runtime.js"></script>
   <script src="main.js"></script>
 </body>
 </html>
